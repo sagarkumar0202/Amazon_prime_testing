@@ -1,0 +1,14 @@
+from flask import Flask, render_template
+
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    movies = ['Kalki', 'Asur', 'Panchayat(S4)', 'Ace', 'Stree 2']
+    return render_template('home.html', movies=movies)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
